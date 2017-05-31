@@ -95,6 +95,12 @@ dependencies {
 
     compile project(":webapp:cas-server-webapp-config")
     compile project(":webapp:cas-server-webapp-init")
+	
+	// 增加jdbc和redis支持
+	compile project(":webapp:cas-server-webapp-session-redis")
+	compile project(":support:cas-server-support-redis-ticket-registry")
+	compile project(":support:cas-server-support-jdbc")
+	compile project(":support:cas-server-support-json-service-registry")
     
     implementation libraries.pac4j
     implementation libraries.thymeleaf
