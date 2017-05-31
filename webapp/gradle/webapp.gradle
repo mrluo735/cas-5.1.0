@@ -100,7 +100,8 @@ dependencies {
 	compile project(":webapp:cas-server-webapp-session-redis")
 	compile project(":support:cas-server-support-redis-ticket-registry")
 	compile project(":support:cas-server-support-jdbc")
-	compile project(":support:cas-server-support-json-service-registry")
+	//compile project(":support:cas-server-support-json-service-registry")
+	compile project(":support:cas-server-support-jpa-service-registry")
     
     implementation libraries.pac4j
     implementation libraries.thymeleaf
