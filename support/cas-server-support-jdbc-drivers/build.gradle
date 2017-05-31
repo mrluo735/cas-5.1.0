@@ -1,0 +1,8 @@
+description = "Apereo CAS JDBC Driver Support"
+dependencies {
+    runtimeOnly "org.hsqldb:hsqldb:$hsqlVersion"
+    runtimeOnly "org.postgresql:postgresql:$postgresqlVersion"
+    runtimeOnly "mysql:mysql-connector-java:$mysqlVersion"
+    runtimeOnly "org.mariadb.jdbc:mariadb-java-client:$mariaDbVersion"
+    runtimeOnly "net.sourceforge.jtds:jtds:$jtdsVersion"
+}

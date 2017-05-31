@@ -1,0 +1,13 @@
+description = "Apereo CAS RADIUS Support"
+dependencies {
+    api libraries.jradius
+    compile project(":core:cas-server-core-util")
+}
+
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        if (details.requested.group == "gnu-getopt") {
+            details.useTarget group: "gnu.getopt", name: "java-getopt", version: details.requested.version
+        }
+    }
+}

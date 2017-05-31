@@ -1,0 +1,7 @@
+description = "Apereo CAS Couchbase Support Core"
+dependencies {
+
+    api libraries.couchbase
+}
+
+

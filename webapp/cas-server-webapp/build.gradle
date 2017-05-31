@@ -1,0 +1,1 @@
+apply from: project.file("../gradle/webapp.gradle")

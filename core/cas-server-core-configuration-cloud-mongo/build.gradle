@@ -1,0 +1,7 @@
+description = "Apereo CAS Core Configuration - MongoDB"
+dependencies {
+    
+    
+    
+    implementation libraries.mongo
+}

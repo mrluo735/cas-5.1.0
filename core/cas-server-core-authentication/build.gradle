@@ -1,0 +1,14 @@
+description = "Apereo CAS Core Authentication"
+dependencies {
+    compile project(":api:cas-server-core-api-services")
+    compile project(":api:cas-server-core-api-ticket")
+    compile project(":core:cas-server-core-configuration")
+    compile project(":api:cas-server-core-api-events")
+    api libraries.metrics
+    implementation libraries.httpclient
+    implementation libraries.ldaptive
+    implementation libraries.groovy
+
+    implementation libraries.springsecurity
+    testImplementation project(":core:cas-server-core-web")
+}

@@ -1,0 +1,15 @@
+description = "Apereo CAS JDBC Monitor Support"
+dependencies {
+
+    compile project(":core:cas-server-core-monitor")
+    compile project(":core:cas-server-core-authentication")
+    
+    implementation libraries.quartz
+
+    
+    runtimeOnly project(":support:cas-server-support-jdbc-drivers")
+
+    
+    testImplementation project(":core:cas-server-core-authentication")
+    testImplementation project(":core:cas-server-core-util")
+}

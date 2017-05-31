@@ -1,0 +1,7 @@
+description = "Apereo CAS Core Logging"
+dependencies {
+    compile project(":core:cas-server-core-logging-config")
+    compileOnly project(":support:cas-server-support-cookie")
+}
+
+
