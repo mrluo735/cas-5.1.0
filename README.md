@@ -54,6 +54,7 @@
   ./gradlew build install --parallel -x test -x javadoc -DskipCheckstyle=true -DskipFindbugs=true
 
 七.修改配置文件
+	https://apereo.github.io/cas/5.1.x/installation/Configuration-Properties.html
   7.1 修改\cas-5.1.0\webapp\resources\service\HTTPSandIMAPS-10000001.json
     增加http类型如下:
     "serviceId" : "^(https|http|imaps)://.*",
