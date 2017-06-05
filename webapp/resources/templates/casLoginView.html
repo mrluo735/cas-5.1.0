@@ -5,14 +5,14 @@
     <title th:text="#{cas.login.pagetitle}"></title>
     
     <script type="text/javascript" th:inline="javascript">
-	//<![CDATA[
-	var service = /*[[${#httpServletRequest.getParameter("service")}]]*/;
-	console.log(service)
-	var index = service.lastIndexOf("/");
-	var redirectUrl = service.substr(0, index) + "/login";
-	document.location = "http://passport.lmplat.com/cas/login";
-	//]]>
-	</script>
+    //<![CDATA[
+    var service = /*[[${#httpServletRequest.getParameter("service")}]]*/;
+    console.log(service)
+    var index = service.lastIndexOf("/");
+    var redirectUrl = service.substr(0, index) + "/login";
+    document.location = "http://passport.lmplat.com/cas/login";
+    //]]>
+    </script>
 </head>
 
 <body id="cas" class="login">
