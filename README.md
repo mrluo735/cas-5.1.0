@@ -25,21 +25,33 @@
   compile project(":support:cas-server-support-json-service-registry")
 	//compile project(":support:cas-server-support-jpa-service-registry")
 
-四.修改cas-5.1.0\webapp\resources\templates\layout.html
-  把资源文件的cdn路径改成cdn.bootcss.com。如下:
-  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
-  <link type="text/css" rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+四.修改前端文件
+  4.1 修改cas-5.1.0\webapp\resources\templates\layout.html
+    把资源文件的cdn路径改成cdn.bootcss.com。如下:
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
+    <link type="text/css" rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
 
-  <link rel="stylesheet" th:href="@{${#themes.code('standard.custom.css.file')}}"/>
+    <link rel="stylesheet" th:href="@{${#themes.code('standard.custom.css.file')}}"/>
 
-  <link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon"/>
+    <link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon"/>
 
-  <script type="text/javascript" src="//cdn.bootcss.com/zxcvbn/4.3.0/zxcvbn.js"></script>
-  <script type="text/javascript" src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-  <script type="text/javascript" src="//cdn.bootcss.com/jqueryui/1.11.4/jquery-ui.min.js"></script>
-  <script type="text/javascript" src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-  <script src="//www.google.com/recaptcha/api.js" async defer th:if="${recaptchaSiteKey}"></script>
-  <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/zxcvbn/4.3.0/zxcvbn.js"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="//www.google.com/recaptcha/api.js" async defer th:if="${recaptchaSiteKey}"></script>
+    <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  4.2 修改cas-5.1.0\webapp\resources\templates\casLoginView.html
+    在<head></head>之间加入如下代码：（跳转至自定义登录页）
+    <script type="text/javascript" th:inline="javascript">
+    //<![CDATA[
+    var service = /*[[${#httpServletRequest.getParameter("service")}]]*/;
+    console.log(service)
+    var index = service.lastIndexOf("/");
+    var redirectUrl = service.substr(0, index) + "/login";
+    document.location = "http://passport.lmplat.com/cas/login";
+    //]]>
+    </script>
 
 五.前端web项目编译指令
   gradle installGulp
