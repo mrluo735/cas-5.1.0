@@ -44,6 +44,7 @@
     <script src="//www.google.com/recaptcha/api.js" async defer th:if="${recaptchaSiteKey}"></script>
     <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   4.2 修改cas-5.1.0\webapp\resources\templates\casLoginView.html
+  
     在<head></head>之间加入如下代码：（跳转至自定义登录页）
     <script type="text/javascript" th:inline="javascript">
     //<![CDATA[
