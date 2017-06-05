@@ -46,6 +46,7 @@
   4.2 修改cas-5.1.0\webapp\resources\templates\casLoginView.html
   
     在<head></head>之间加入如下代码：（跳转至自定义登录页）
+    
     <script type="text/javascript" th:inline="javascript">
     //<![CDATA[
     var service = /*[[${#httpServletRequest.getParameter("service")}]]*/;
