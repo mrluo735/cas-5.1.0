@@ -18,6 +18,7 @@
   }
 
 三.在cas-5.1.0\webapp\gradle\webapp.gradle中增加依赖项目
+
   数据库支持,redis支持,service支持
   compile project(":support:cas-server-support-jdbc")
   compile project(":support:cas-server-support-redis-ticket-registry")
@@ -26,6 +27,7 @@
 	//compile project(":support:cas-server-support-jpa-service-registry")
 
 四.修改前端文件
+
   4.1 修改cas-5.1.0\webapp\resources\templates\layout.html
     把资源文件的cdn路径改成cdn.bootcss.com。如下:
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
@@ -54,6 +56,7 @@
     </script>
 
 五.前端web项目编译指令
+
   gradle installGulp
   
   可选
